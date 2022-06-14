@@ -9,11 +9,14 @@
           <h3 class="login">Login</h3>
           <p class="p-text">Kindly enter your details to log in </p>
           <div class="input-space">
-            <Material-Field label="Email Address" type="email" class="space-bottom" />
-            <Material-Field label="Password" type="password" class="space-bottom" />
+            <form action="" @submit="submitForm()">
+              <Material-Field label="Email Address" type="email" class="space-bottom" />
+              <Material-Field label="Password" type="password" class="space-bottom" />
             <div class="d-grid gap-2 space-bottom-24">
-              <button class="btn btn-primary btn-size" type="button">Log in</button>
+              <button class="btn btn-primary btn-size" type="submit">Log in</button>
             </div>
+            </form>
+            
             <div>
               <p class="forgotPsd">Forgot your password?</p>
             </div>
@@ -34,7 +37,12 @@ import MaterialField from '@/components/primary/MaterialField.vue'
 export default {
   components: {
     MaterialField
+  },
+
+  submitForm() {
+    console.log(this.$router.push({name: 'dashboard'}))
   }
+
 }
 </script>
 

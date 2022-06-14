@@ -1,7 +1,7 @@
 <template>
     <div class="input-container">
         <input :type="type" class="input" @blur="checkInpBlur" autocomplete="off" spellcheck="false"
-            maxlength="25">
+            maxlength="25" required>
         <div class="placeholde" @click="placeHolder">
             {{label}}
         </div>
