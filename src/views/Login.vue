@@ -39,8 +39,10 @@ export default {
     MaterialField
   },
 
-  submitForm() {
-    console.log(this.$router.push({name: 'dashboard'}))
+  methods: {
+    submitForm() {
+      this.$router.push({ path: '/dashboard' })
+    }
   }
 
 }
