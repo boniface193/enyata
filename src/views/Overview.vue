@@ -57,7 +57,6 @@ export default {
 
     .card-wrapper {
         overflow: auto;
-        overflow-x: scroll;
     }
 
     .col-md-3 {
