@@ -8,9 +8,10 @@
                 </div>
 
                 <!-- list items to the layout -->
-                <ListItem @click="closeSideBar()" v-for="item in list" :key="item.id" :text="item.title" :class="item.spaceBottom" :image="item.image"
-                    :imgFrame="item.color" :route="item.route"/>
+                <ListItem @click="closeSideBar()" v-for="item in list" :key="item.id" :text="item.title"
+                    :class="item.spaceBottom" :image="item.image" :imgFrame="item.color" :route="item.route" />
             </div>
+            <div class="col-md-3 d-md-none d-lg-block"></div>
 
             <div class="col-md-9 col-12">
 
@@ -35,7 +36,7 @@
                 </nav>
 
                 <!-- view files will inject here  -->
-                <router-view />
+                <router-view class="sidebarSpace" />
             </div>
         </div>
     </div>
@@ -92,6 +93,9 @@ $primary: #031434 !important;
 
 .bg-primary {
     background: $primary;
+    position: fixed;
+    top: 0;
+    bottom: 0;
     
     .logoImg {
         width: 107px;
@@ -103,6 +107,9 @@ $primary: #031434 !important;
     .space-bottom{
         margin-bottom: 70px;
     }
+}
+
+.sidebarSpace {
 }
 
 .fa-regular.fa-bell {
