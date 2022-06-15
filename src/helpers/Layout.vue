@@ -57,11 +57,23 @@ export default {
             ]
         }
     },
+    mounted() {
+        window.addEventListener("resize", this.handleResize);
+        this.handleResize();
+    },
     methods: {
         handler() {
             document.querySelector('#d-none').classList.toggle('d-none')
+        },
+        handleResize() {
+            if (window.innerWidth <= 971) {
+                document.querySelector('#d-none').classList.add('d-none')
+            } else {
+                document.querySelector('#d-none').classList.remove('d-none')
+            }
         }
     }
+        
 }
 </script>
 

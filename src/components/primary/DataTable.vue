@@ -20,26 +20,6 @@
                             <span class="thead-color">{{header.title}}: </span>
                             <span class="tbody-color">{{item[`${header.value}`]}}</span>
                         </div>
-                        <!-- <div>
-                            <span class="thead-color">Release Date: </span>
-                            <span class="tbody-color">9/18/20</span>
-                        </div>
-                        <div>
-                            <span class="thead-color">Director: </span>
-                            <span class="tbody-color">Esther Howard</span>
-                        </div>
-                        <div>
-                            <span class="thead-color">Producer: </span>
-                            <span class="tbody-color">Paracetamol</span>
-                        </div>
-                        <div>
-                            <span class="thead-color">Episode ID: </span>
-                            <span class="tbody-color">4</span>
-                        </div>
-                        <div>
-                            <span class="thead-color">Character: </span>
-                            <span class="tbody-color">https://swapi.dev/api/people</span>
-                        </div> -->
                     </div>
                 </div>
 
