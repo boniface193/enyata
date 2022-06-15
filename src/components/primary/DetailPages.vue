@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     hello
   </div>
 </template>
@@ -10,6 +10,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.container {
+height: 100vh;
+}
 </style>
