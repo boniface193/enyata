@@ -24,8 +24,6 @@ export default {
 
 <style lang="scss" scoped>
 
-
-
 .bcolor {
     background-color: #0A74DC !important;
     border-radius: 4px;
