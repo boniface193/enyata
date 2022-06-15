@@ -1,7 +1,8 @@
 <template>
     <div>
         <div class="d-flex justify-content-center">
-            <router-link :to="{name: route}" class="d-flex align-items-center overview" exact-active-class="bcolor">
+            <router-link :to="{name: route}" class="d-flex align-items-center overview" exact-active-class="bcolor"
+                id="closeSidebar">
                 <div class="">
                     <div class="d-flex align-items-center btn-img">
                         <img v-if="image" src="@/assets/images/grid_small.svg" alt="" class="btnImg">

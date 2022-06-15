@@ -8,7 +8,7 @@
                 </div>
 
                 <!-- list items to the layout -->
-                <ListItem v-for="item in list" :key="item.id" :text="item.title" :class="item.spaceBottom" :image="item.image"
+                <ListItem @click="closeSideBar()" v-for="item in list" :key="item.id" :text="item.title" :class="item.spaceBottom" :image="item.image"
                     :imgFrame="item.color" :route="item.route"/>
             </div>
 
@@ -64,6 +64,9 @@ export default {
     methods: {
         handler() {
             document.querySelector('#d-none').classList.toggle('d-none')
+        },
+        closeSideBar() {
+            document.querySelector('#d-none').classList.add('d-none')
         },
         handleResize() {
             if (window.innerWidth <= 971) {
