@@ -109,9 +109,6 @@ $primary: #031434 !important;
     }
 }
 
-.sidebarSpace {
-}
-
 .fa-regular.fa-bell {
     font-size: 16px;
     height: 19.5px;
@@ -166,6 +163,7 @@ $primary: #031434 !important;
         z-index: 1;
         width: 250px;
         background-color: #fff;
+        // height: 100vh;
     }
 }
 

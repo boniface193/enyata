@@ -15,10 +15,12 @@
                 <div class="row">
                     <div class="card table-body-2 p-3 mx-2" v-for="(item, index3) in sortedItems" :key="index3">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <router-link :to="{ name: 'details', params: {id: `${index3}-details` } }" style="text-decoration: none">
                         <div v-for="(header, index) in headers" :key="index">
                             <span class="thead-color">{{header.title}}: </span>
-                            <span class="tbody-color">{{item[`${header.value}`]}}</span>
+                                <span class="tbody-color">{{item[`${header.value}`]}}</span>
                         </div>
+                    </router-link>
                     </div>
                 </div>
 
@@ -38,7 +40,7 @@
 
                                 <td><input class="form-check-input" type="checkbox" id="check1"></td>
                                 <td v-for="(header, index2) in headers" :key="`${index2}${item[`${itemKey}`]}`">
-                                    <router-link :to="{ name: header.link, params: {id: `${index2}-details` } }">
+                                    <router-link :to="{ name: header.link, params: {id: `${index2}-details` } }" style="text-decoration: none">
                                         {{item[`${header.value}`]}}
                                     </router-link>
 
