@@ -1,6 +1,6 @@
 <template>
     <div class="b-mt">
-        <Data-Table :items="overview" :headers="tableHeaders" itemKey="id" :select="false" />
+        <Data-Table tableName="Starship" :items="starship" :headers="tableHeaders" itemKey="id" :select="false" />
     </div>
 </template>
 
@@ -12,20 +12,20 @@ export default {
     },
     data() {
         return {
-            overview: [],
+            starship: [],
             tableHeaders: [
-                { title: 'Film Title', value: "title" },
-                { title: "Release Date", value: "release_date" },
-                { title: "Director", value: "director" },
-                { title: "Producer", value: "producer" },
-                { title: "Episode ID", value: "episode_id" },
+                { title: 'Name', value: "name" },
+                { title: "Model", value: "model" },
+                { title: "Class", value: "MGLT" },
+                { title: "Passenger", value: "passengers" },
+                { title: "Length", value: "length" },
                 { title: "Character", value: "url" },
             ]
         }
     },
     created() {
-        this.$store.dispatch('overview/getOverview').then((res) => {
-            this.overview = res
+        this.$store.dispatch('starship/getStarship').then((res) => {
+            this.starship = res
         })
     }
 

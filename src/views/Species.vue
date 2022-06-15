@@ -1,6 +1,6 @@
 <template>
     <div class="b-mt">
-        <Data-Table :items="overview" :headers="tableHeaders" itemKey="id" :select="false" />
+        <Data-Table tableName="Species" :items="species" :headers="tableHeaders" itemKey="id" :select="false" />
     </div>
 </template>
 
@@ -13,20 +13,20 @@ export default {
 
     data() {
         return {
-            overview: [],
+            species: [],
             tableHeaders: [
-                { title: 'Film Title', value: "title" },
-                { title: "Release Date", value: "release_date" },
-                { title: "Director", value: "director" },
-                { title: "Producer", value: "producer" },
-                { title: "Episode ID", value: "episode_id" },
-                { title: "Character", value: "url" },
+                { title: 'Name', value: "name" },
+                { title: "Classification", value: "classification" },
+                { title: "Eyes Colors", value: "eye_colors" },
+                { title: "Hair Color", value: "hair_colors" },
+                { title: "Height", value: "average_height" },
+                { title: "Created", value: "created" },
             ]
         }
     },
     created() {
-        this.$store.dispatch('overview/getOverview').then((res) => {
-            this.overview = res
+        this.$store.dispatch('species/getSpecies').then((res) => {
+            this.species = res
         })
     }
 

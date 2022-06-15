@@ -2,7 +2,7 @@
     <div>
         <div class="table-space">
             <div class="table-title">
-                Films
+                {{ tableName }}
             </div>
 
             <div class="d-flex justify-content-center mt-5" v-if="items.length == 0">
@@ -12,14 +12,15 @@
 
             <div v-else>
 
-                <div class="card table-body-2 p-3 d-flex justify-content-between">
-                    <div>
+                <div class="">
+                    <div class="card table-body-2 p-3"
+                        v-for="(item, index3) in sortedItems" :key="index3">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <div>
-                            <span class="thead-color">Film Title: </span>
-                            <span class="tbody-color">MoonLight</span>
+                        <div v-for="(header, index) in headers" :key="index">
+                            <span class="thead-color">{{header.title}}: </span>
+                            <span class="tbody-color">{{item[`${header.value}`]}}</span>
                         </div>
-                        <div>
+                        <!-- <div>
                             <span class="thead-color">Release Date: </span>
                             <span class="tbody-color">9/18/20</span>
                         </div>
@@ -38,7 +39,7 @@
                         <div>
                             <span class="thead-color">Character: </span>
                             <span class="tbody-color">https://swapi.dev/api/people</span>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
@@ -80,6 +81,7 @@ export default {
         // "paginationLength",
         // "page",
         // "itemPerPage",
+        "tableName",
         "itemKey",
         "statusKey",
     ],

@@ -1,9 +1,15 @@
 import { createStore } from 'vuex'
 import overview from "./modules/Overview";
+import people from "./modules/Peolpe";
+import species from "./modules/Species";
+import starship from "./modules/Starship";
 
 // initial state
 const initialState = {
   overview: overview.state,
+  people: people.state,
+  species: species.state,
+  starship: starship.state
 
 }
 
@@ -12,7 +18,10 @@ const COPY = JSON.stringify(initialState);
 
 export default new createStore({
   modules: {
-    overview
+    overview,
+    people,
+    species,
+    starship
   },
 
   mutations: {

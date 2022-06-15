@@ -6,7 +6,7 @@
             </div>
         </div>
 
-        <Data-Table :items="overview" :headers="tableHeaders" itemKey="id" :select="false" />
+        <Data-Table tableName="Films" :items="overview" :headers="tableHeaders" itemKey="id" :select="false" />
     </div>
 </template>
 
