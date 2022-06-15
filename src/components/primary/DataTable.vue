@@ -13,8 +13,7 @@
             <div v-else>
 
                 <div class="row">
-                    <div class="card table-body-2 p-3 mx-2"
-                        v-for="(item, index3) in sortedItems" :key="index3">
+                    <div class="card table-body-2 p-3 mx-2" v-for="(item, index3) in sortedItems" :key="index3">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <div v-for="(header, index) in headers" :key="index">
                             <span class="thead-color">{{header.title}}: </span>
@@ -36,10 +35,15 @@
 
                         <tbody>
                             <tr v-for="(item, index3) in sortedItems" :key="index3" class="tbody-color">
+
                                 <td><input class="form-check-input" type="checkbox" id="check1"></td>
                                 <td v-for="(header, index2) in headers" :key="`${index2}${item[`${itemKey}`]}`">
-                                    {{item[`${header.value}`]}}
+                                    <router-link :to="{ name: header.link, params: {id: `${index2}-details` } }">
+                                        {{item[`${header.value}`]}}
+                                    </router-link>
+
                                 </td>
+
                             </tr>
                         </tbody>
                     </table>
@@ -80,28 +84,25 @@ export default {
     },
 
     methods: {
-        // selectRow() {
-        //     this.selected = [];
-        //     if (this.selectAll) {
-        //         for (let i in this.items) {
-        //             this.selected.push(this.items[i][`${this.itemKey}`]);
-        //         }
-        //     }
-        //     this.emitSelectedRow();
-        // },
-        // emitSelectedRow() {
-        //     this.$emit("selectedRow", this.selected);
-        // },
+        selectRow() {
+            this.selected = [];
+            if (this.selectAll) {
+                for (let i in this.items) {
+                    this.selected.push(this.items[i][`${this.itemKey}`]);
+                }
+            }
+            this.emitSelectedRow();
+        },
+        emitSelectedRow() {
+            this.$emit("selectedRow", this.selected);
+        },
     },
-
-    created() {
-        console.log("sortedItems", this.sortedItems)
-    }
 
 }
 </script>
 
 <style lang="scss" scoped>
+
 .table-space {
     margin: 75px 0 24px 0;
 
@@ -147,10 +148,14 @@ export default {
     td {
         padding: 18px 8px;
     }
-    tbody,tr:hover {
-        // background: #FFFFFF;
-        box-shadow: 0px 0px 30px rgba(13, 47, 161, 0.07);
-        border-radius: 4px;
+    tbody>tr:hover {
+        background: #FFFFFF;
+            box-shadow: 0px 0px 30px rgba(13, 47, 161, 0.07);
+            border-radius: 4px;
+            background: linear-gradient(0deg, #434854, #434854),
+            linear-gradient(0deg, #303B54, #303B54);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
         cursor: pointer;
     }
 

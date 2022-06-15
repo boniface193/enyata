@@ -29,17 +29,16 @@ export default {
             ],
 
             tableHeaders: [
-                { title: 'Film Title', value: "title" }, 
-                { title: "Release Date", value: "release_date" }, 
-                { title: "Director", value: "director" }, 
-                { title: "Producer", value: "producer" }, 
-                { title: "Episode ID", value: "episode_id" }, 
-                { title: "Character", value: "url" },
+                { title: 'Film Title', value: "title", link: "details" }, 
+                { title: "Release Date", value: "release_date", link: "details" }, 
+                { title: "Director", value: "director", link: "details" }, 
+                { title: "Producer", value: "producer", link: "details" }, 
+                { title: "Episode ID", value: "episode_id", link: "details" }, 
+                { title: "Character", value: "url", link: "details" },
             ]
         }
     },
     created() {
-        
         this.$store.dispatch('overview/getOverview').then((res) => {
             this.overview = res
         })

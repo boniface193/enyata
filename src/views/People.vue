@@ -14,16 +14,17 @@ export default {
         return {
             people: [],
             tableHeaders: [
-                { title: 'Name', value: "name" },
-                { title: "Birth Year", value: "birth_year" },
-                { title: "Gender", value: "gender" },
-                { title: "Hair Color", value: "hair_color" },
-                { title: "Height", value: "height" },
-                { title: "Created", value: "created" },
+                { title: 'Name', value: "name", link: "details" },
+                { title: "Birth Year", value: "birth_year", link: "details" },
+                { title: "Gender", value: "gender", link: "details" },
+                { title: "Hair Color", value: "hair_color", link: "details" },
+                { title: "Height", value: "height", link: "details" },
+                { title: "Created", value: "created", link: "details" },
             ]
         }
     },
     created() {
+       
         this.$store.dispatch('people/getPeople').then((res) => {
             this.people = res
         })

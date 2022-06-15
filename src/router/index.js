@@ -34,6 +34,12 @@ const routes = [
         name: 'species',
         component: () => import('../views/Species.vue')
       },
+      {
+        path: '/:id',
+        name: 'details',
+        component: () => import('../components/primary/DetailPages.vue'),
+        props: true
+      }
     ]
   }
 ]
