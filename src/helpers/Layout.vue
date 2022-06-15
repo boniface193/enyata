@@ -159,7 +159,6 @@ $primary: #031434 !important;
         z-index: 1;
         width: 250px;
         background-color: #fff;
-        // height: 100vh;
     }
 }
 
@@ -175,12 +174,6 @@ $primary: #031434 !important;
     }
     .fa-solid.fa-align-left {
         display: none;
-    }
-}
-
-@media (min-width: 1203px) { 
-    .bg-primary {
-        // height: 100vh;
     }
 }
 

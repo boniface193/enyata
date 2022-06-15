@@ -12,8 +12,8 @@
 
             <div v-else>
 
-                <div class="">
-                    <div class="card table-body-2 p-3"
+                <div class="row">
+                    <div class="card table-body-2 p-3 mx-2"
                         v-for="(item, index3) in sortedItems" :key="index3">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <div v-for="(header, index) in headers" :key="index">
